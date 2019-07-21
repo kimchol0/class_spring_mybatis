@@ -38,10 +38,10 @@
     	<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
     </bean>
     
-    <!-- mapper方式配置 -->
-    <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-    	<property name="mapperInterface" value="cn.hp.ssm.mapper.UserMapper"></property>
-    	<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+    <!-- mapper配置扫描的方式 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    	<property name="basePackage" value="cn.hp.ssm.mapper"></property>
+    	<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
     
 </beans>
